@@ -1,4 +1,4 @@
-import { loadTailwindBlocks } from './tailwind'
+import loadTailwindBlocks from './tailwind'
 
 export default (editor, opts = {}) => {
   const bm = editor.BlockManager;
@@ -9,5 +9,5 @@ export default (editor, opts = {}) => {
     // media: '<svg>...</svg>',
   });
 
-  loadTailwindBlocks(editor)
+  loadTailwindBlocks(editor, opts);
 }

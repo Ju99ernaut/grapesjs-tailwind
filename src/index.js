@@ -8,12 +8,12 @@ export default (editor, opts = {}) => {
     ...{
       i18n: {},
       // default options
-      tailwindCssUrl: 'https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css',
+      tailwindCssUrl: 'https://unpkg.com/tailwindcss/dist/tailwind.min.css',
       changeThemeText: 'Change Theme',
     }, ...opts
   };
 
-  // TODO: Add dark mode, block editing, css addition, block styles
+  // TODO: Add dark mode, css addition
 
   // Add components
   loadComponents(editor, options);
@@ -27,12 +27,37 @@ export default (editor, opts = {}) => {
     ...options.i18n,
   });
 
+  const appendTailwindCss = async (ed) => {
+    const iframe = ed.Canvas.getFrameEl();
+
+    if (!iframe) return;
+
+    const cssLink = document.createElement('link');
+    cssLink.href = options.tailwindCssUrl;
+    cssLink.rel = 'stylesheet';
+
+    const cssStyle = document.createElement('style');
+    cssStyle.innerHTML = `img.object-cover { filter: sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) !important; }`;
+
+    // checks iframe is ready before loading Tailwind CSS - issue with firefox
+    const f = setInterval(() => {
+      const doc = iframe.contentDocument;
+      if (doc.readyState === 'complete') {
+        doc.head.appendChild(cssLink);
+        doc.head.appendChild(cssStyle);
+        clearInterval(f);
+      }
+    }, 100)
+  }
+
   // TODO Remove
-  editor.on('load', () =>
+  editor.on('load', () => {
     editor.addComponents(
       `<div style="margin:100px; padding:25px;">
             Content loaded from the plugin
         </div>`,
       { at: 0 }
-    ))
+    );
+    appendTailwindCss(editor);
+  });
 };

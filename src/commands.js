@@ -45,17 +45,8 @@ const getUpdateThemeModal = (editor) => {
         md.close()
     }
 
-    const btnCancel = document.createElement('button')
-    btnCancel.innerHTML = 'Cancel'
-    btnCancel.className = pfx + 'btn-prim ' + pfx + 'btn-import'
-    btnCancel.style.float = 'right'
-    btnCancel.onclick = () => {
-        md.close()
-    }
-
     // box-shadow: 0 0 0 2pt #c5c5c575
     containerFooter.appendChild(btnEdit)
-    containerFooter.appendChild(btnCancel)
 
     container.appendChild(containerBody)
     container.appendChild(containerFooter)
