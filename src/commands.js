@@ -75,9 +75,11 @@ const updateThemeColor = (editor, color) => {
 }
 
 export default (editor, opts = {}) => {
-    editor.Commands.add('open-update-theme', {
+    const cm = editor.Commands;
+
+    cm.add('open-update-theme', {
         run(_, sender) {
-            sender.set('active', 0)
+            sender?.set && sender.set('active', 0)
             const md = editor.Modal
             md.setTitle(opts.changeThemeText)
             const container = getUpdateThemeModal(editor)
