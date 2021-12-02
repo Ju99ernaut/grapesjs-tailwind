@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Grapesjs Tailwind</title>
+    <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/grapesjs"></script>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .gjs-block {
+            padding: 0 !important;
+            width: 100% !important;
+            min-height: auto !important;
+        }
+
+        .gjs-block svg {
+            width: 100%;
+        }
+
+        .change-theme-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 5px;
+        }
+
+        .change-theme-button:focus {
+            /* background-color: yellow; */
+            outline: none;
+            box-shadow: 0 0 0 2pt #c5c5c575;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="gjs" style="height:0px; overflow:hidden">
+        <div style="margin:100px 100px 25px; padding:25px; font:caption">
+            This is a demo content from _index.html. You can use this template file for
+            development purpose. It won't be stored in your git repository
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        const escapeName = (name) => `${name}`.trim().replace(/([^a-z0-9\w-:/]+)/gi, '-');
+
+        window.editor = grapesjs.init({
+            height: '100%',
+            container: '#gjs',
+            showOffsets: true,
+            fromElement: true,
+            noticeOnUnload: false,
+            storageManager: false,
+            selectorManager: { escapeName },
+            plugins: ['grapesjs-tailwind'],
+            pluginsOpts: {
+                'grapesjs-tailwind': { /* Test here your options  */ }
+            }
+        });
+
+        editor.Panels.addButton('options', {
+            id: 'update-theme',
+            className: 'fa fa-wrench',
+            command: 'open-update-theme',
+            attributes: {
+                title: 'About',
+                'data-tooltip-pos': 'bottom',
+            },
+        })
+    </script>
+</body>
+
+</html>

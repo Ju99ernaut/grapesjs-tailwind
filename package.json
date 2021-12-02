@@ -19,5 +19,8 @@
   "devDependencies": {
     "grapesjs-cli": "^2.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "purify-css": "^1.2.5"
+  }
 }
