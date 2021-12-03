@@ -2,6 +2,8 @@
 
 [DEMO](##)
 
+> Requires [`grapesjs-plugin-forms`](https://github.com/artf/grapesjs-plugin-forms)
+
 Tailwind intergration which includes the complete set of blocks from [Tailblocks.cc](https://tailblocks.cc/), bases on [Destack](https://github.com/LiveDuo/destack).
 
 ### HTML
@@ -30,21 +32,62 @@ body, html {
   margin: 0;
   height: 100%;
 }
+
+.change-theme-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.change-theme-button:focus {
+  /* background-color: yellow; */
+  outline: none;
+  box-shadow: 0 0 0 2pt #c5c5c575;
+}
+```
+
+### `Optional` CSS
+```
+/* Make blocks full width */
+.gjs-block {
+    padding: 0 !important;
+    width: 100% !important;
+    min-height: auto !important;
+}
+
+/* Fit icons properly */
+.gjs-block svg {
+    width: 100%;
+}
 ```
 
 
 ## Summary
 
 * Plugin name: `grapesjs-tailwind`
-* Components
-    * `component-id-1`
-    * `component-id-2`
-    * ...
-* Blocks
-    * `block-id-1`
-    * `block-id-2`
-    * ...
+* Commands
+    * `get-tailwindCss` - Get Tailwind CSS of your page(WIP: Resulting css too large)
+    * `open-update-theme` - Open theme modal
 
+### `get-tailwindCss` Usage
+
+```js
+// By default it will print css to console
+editor.runCommand('get-tailwindCss');
+
+// Using options
+editor.runCommand('get-tailwindCss', { /* Options here */ });
+```
+
+#### `get-tailwindCss` Options
+
+| Option | Description | Default |
+|-|-|-
+| `html` | Page markup as string | `editor.getHtml` |
+| `css` | Tailwind css as string | `tailwind css from options.tailwindCssUrl` |
+| `purifyOpts` | Purify option | `{ info: false, rejected: false, whitelist: [] }` |
+| `callback` | Calback for resulting css | `pcss => console.log(pcss)` |
 
 
 ## Options
