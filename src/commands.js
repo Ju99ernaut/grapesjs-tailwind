@@ -1,3 +1,5 @@
+import purify from './purifycss'
+
 const themeList = [
     { name: 'indigo', color: '#6366f1' },
     { name: 'yellow', color: '#f59e0b' },
@@ -86,5 +88,28 @@ export default (editor, opts = {}) => {
             md.setContent(container)
             md.open()
         },
+    })
+
+    cm.add('get-tailwindCss', {
+        run(editor, sender, options = {}) {
+            sender?.set && sender.set('active', 0)
+            const {
+                html = editor.getHtml(),
+                css,
+                purifyOpts = {},
+                callback = pcss => console.log(pcss)
+            } = options
+            if (!css) {
+                fetch(opts.tailwindCssUrl)
+                    .then(res => res.text())
+                    .then(tcss => {
+                        console.log(html)
+                        console.log(tcss)
+                        purify(html, tcss, purifyOpts, callback)
+                    })
+            } else {
+                purify(html, css, purifyOpts, clb)
+            }
+        }
     })
 }
