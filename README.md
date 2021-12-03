@@ -1,6 +1,6 @@
 # Grapesjs Tailwind(WIP)
 
-[DEMO](##)
+[DEMO](https://codepen.io/ju99ernaut/pen/BaKGadb)
 
 > Requires [`grapesjs-plugin-forms`](https://github.com/artf/grapesjs-plugin-forms)
 
@@ -17,11 +17,14 @@ Tailwind intergration which includes the complete set of blocks from [Tailblocks
 
 ### JS
 ```js
+const escapeName = (name) => `${name}`.trim().replace(/([^a-z0-9\w-:/]+)/gi, '-');
+
 const editor = grapesjs.init({
-	container: '#gjs',
+  container: '#gjs',
   height: '100%',
   fromElement: true,
   storageManager: false,
+  selectorManager: { escapeName },
   plugins: ['grapesjs-tailwind'],
 });
 ```
@@ -48,7 +51,7 @@ body, html {
 ```
 
 ### `Optional` CSS
-```
+```css
 /* Make blocks full width */
 .gjs-block {
     padding: 0 !important;
