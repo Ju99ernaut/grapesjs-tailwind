@@ -103,8 +103,6 @@ export default (editor, opts = {}) => {
                 fetch(opts.tailwindCssUrl)
                     .then(res => res.text())
                     .then(tcss => {
-                        console.log(html)
-                        console.log(tcss)
                         purify(html, tcss, purifyOpts, callback)
                     })
             } else {
