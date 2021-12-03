@@ -1,6 +1,6 @@
 {
     "name": "grapesjs-tailwind",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Grapesjs Tailwind",
     "main": "dist/grapesjs-tailwind.min.js",
     "repository": {

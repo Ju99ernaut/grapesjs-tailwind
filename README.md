@@ -17,6 +17,7 @@ Tailwind intergration which includes the complete set of blocks from [Tailblocks
 
 ### JS
 ```js
+// Handle tailwind's use of slashes in css names
 const escapeName = (name) => `${name}`.trim().replace(/([^a-z0-9\w-:/]+)/gi, '-');
 
 const editor = grapesjs.init({

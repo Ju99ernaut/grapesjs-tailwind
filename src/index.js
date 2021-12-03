@@ -45,7 +45,6 @@ export default (editor, opts = {}) => {
     }, 100)
   }
 
-  // TODO Remove
   editor.on('load', () => {
     appendTailwindCss(editor);
   });
