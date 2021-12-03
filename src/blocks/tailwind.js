@@ -649,10 +649,10 @@ const sources = [
 ]
 
 export default (editor, options = {}) => {
-  const blockManager = editor.BlockManager
+  const bm = editor.Blocks
 
   sources.forEach((s) => {
-    blockManager.add(s.id, {
+    bm.add(s.id, {
       label: s.label,
       attributes: { class: s.class },
       content: s.content,

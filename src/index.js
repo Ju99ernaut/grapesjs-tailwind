@@ -1,3 +1,4 @@
+import loadBlocks from './blocks';
 import loadCommands from './commands';
 import en from './locale/en';
 
@@ -11,6 +12,8 @@ export default (editor, opts = {}) => {
     }, ...opts
   };
 
+  // Add blocks
+  loadBlocks(editor, options);
   // Add commands
   loadCommands(editor, options);
   // Load i18n files
