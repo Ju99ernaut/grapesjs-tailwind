@@ -67,7 +67,7 @@ body, html {
 
 * Plugin name: `grapesjs-tailwind`
 * Commands
-    * `get-tailwindCss` - Get Tailwind CSS of your page(WIP: Resulting css too large)
+    * `get-tailwindCss` - Get Tailwind CSS of your page(Resulting css may be too large, A tool like [`clean-css`](https:github.com/clean-css/clean-css) could possibly reduce css size)
     * `open-update-theme` - Open theme modal
 
 ### `get-tailwindCss` Usage
