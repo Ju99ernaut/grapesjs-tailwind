@@ -7,7 +7,7 @@ export default (editor, opts = {}) => {
     ...{
       i18n: {},
       // default options
-      tailwindCssUrl: 'https://unpkg.com/tailwindcss/dist/tailwind.min.css',
+      tailwindCssUrl: 'https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css',
       changeThemeText: 'Change Theme',
     }, ...opts
   };
