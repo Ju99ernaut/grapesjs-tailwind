@@ -7,7 +7,10 @@ export default (editor, opts = {}) => {
     ...{
       i18n: {},
       // default options
-      tailwindCssUrl: 'https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css',
+      tailwindPlayCdn: 'https://cdn.tailwindcss.com',
+      plugins: [],
+      config: {},
+      cover: `img.object-cover { filter: sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) !important; }`,
       changeThemeText: 'Change Theme',
     }, ...opts
   };
@@ -27,18 +30,23 @@ export default (editor, opts = {}) => {
 
     if (!iframe) return;
 
-    const cssLink = document.createElement('link');
-    cssLink.href = options.tailwindCssUrl;
-    cssLink.rel = 'stylesheet';
+    const { tailwindPlayCdn, plugins, config, cover } = options;
+    const init = () => {
+      iframe.contentWindow.tailwind.config = config;
+    }
+
+    const script = document.createElement('script');
+    script.src = tailwindPlayCdn + (plugins.length ? `?plugins=${plugins.join()}` : '');
+    script.onload = init;
 
     const cssStyle = document.createElement('style');
-    cssStyle.innerHTML = `img.object-cover { filter: sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) !important; }`;
+    cssStyle.innerHTML = cover;
 
     // checks iframe is ready before loading Tailwind CSS - issue with firefox
     const f = setInterval(() => {
       const doc = iframe.contentDocument;
       if (doc.readyState === 'complete') {
-        doc.head.appendChild(cssLink);
+        doc.head.appendChild(script);
         doc.head.appendChild(cssStyle);
         clearInterval(f);
       }

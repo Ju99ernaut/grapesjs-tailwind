@@ -88,17 +88,16 @@ editor.runCommand('get-tailwindCss', { /* Options here */ });
 
 | Option | Description | Default |
 |-|-|-
-| `html` | Page markup as string | `editor.getHtml` |
-| `css` | Tailwind css as string | `tailwind css from options.tailwindCssUrl` |
-| `purifyOpts` | Purify option | `{ info: false, rejected: false, whitelist: [] }` |
-| `callback` | Calback for resulting css | `pcss => console.log(pcss)` |
+| `callback` | Calback for resulting css | `twcss => console.log(twcss)` |
 
 
 ## Options
 
 | Option | Description | Default |
 |-|-|-
-| `tailwindCssUrl` | URL for fetching tailwind stylesheet | `https://unpkg.com/tailwindcss/dist/tailwind.min.css` |
+| `tailwindPlayCdn` | URL for fetching tailwind play cdn | `https://cdn.tailwindcss.com` |
+| `plugins` | array to include tailwind 1st party plugins | `[]` |
+| `config` | custom tailwind config | `{}` |
 | `changeThemeText` | Change theme modal title | `Change Theme` |
 
 

@@ -1,13 +1,28 @@
-import purify from './purifycss'
+//import purify from './purifycss'
 
 const themeList = [
+    { name: 'slate', color: '#64748b' },
+    { name: 'gray', color: '#6b7280' },
+    { name: 'zinc', color: '#71717a' },
+    { name: 'neutral', color: '#737373' },
+    { name: 'stone', color: '#78716c' },
+    { name: 'red', color: '#ef4444' },
+    { name: 'orange', color: '#f97316' },
+    { name: 'amber', color: '#f59e0b' },
+    { name: 'yellow', color: '#eab308' },
+    { name: 'lime', color: '#84cc16' },
+    { name: 'green', color: '#22c55e' },
+    { name: 'emerald', color: '#10b981' },
+    { name: 'teal', color: '#14b8a6' },
+    { name: 'cyan', color: '#06b6d4' },
+    { name: 'sky', color: '#0ea5e9' },
+    { name: 'blue', color: '#3b82f6' },
     { name: 'indigo', color: '#6366f1' },
-    { name: 'yellow', color: '#f59e0b' },
-    { name: 'red', color: '#f56565' },
-    { name: 'purple', color: '#9f7aea' },
-    { name: 'pink', color: '#ed64a6' },
-    { name: 'blue', color: '#4299e1' },
-    { name: 'green', color: '#48bb78' },
+    { name: 'violet', color: '#8b5cf6' },
+    { name: 'purple', color: '#a855f7' },
+    { name: 'fuchsia', color: '#d946ef' },
+    { name: 'pink', color: '#ec4899' },
+    { name: 'rose', color: '#f43f5e' },
 ]
 
 const colorRegex = new RegExp(
@@ -25,6 +40,7 @@ const getUpdateThemeModal = (editor) => {
     containerBody.style.padding = '40px 0px'
     containerBody.style.display = 'flex'
     containerBody.style.justifyContent = 'center'
+    containerBody.style.flexWrap = 'wrap'
 
     let selectedTheme
     themeList.forEach((theme) => {
@@ -90,24 +106,42 @@ export default (editor, opts = {}) => {
         },
     })
 
+    //cm.add('get-tailwindCss', {
+    //    run(editor, sender, options = {}) {
+    //        sender?.set && sender.set('active', 0)
+    //        const {
+    //            html = editor.getHtml(),
+    //            css,
+    //            purifyOpts = {},
+    //            callback = pcss => console.log(pcss)
+    //        } = options
+    //        if (!css) {
+    //            fetch(opts.tailwindCssUrl)
+    //                .then(res => res.text())
+    //                .then(tcss => {
+    //                    purify(html, tcss, purifyOpts, callback)
+    //                })
+    //        } else {
+    //            purify(html, css, purifyOpts, clb)
+    //        }
+    //    }
+    //})
+
     cm.add('get-tailwindCss', {
         run(editor, sender, options = {}) {
-            sender?.set && sender.set('active', 0)
+            sender?.set && sender.set('active', 0);
             const {
-                html = editor.getHtml(),
-                css,
-                purifyOpts = {},
-                callback = pcss => console.log(pcss)
+                callback = twcss => console.log(twcss)
             } = options
-            if (!css) {
-                fetch(opts.tailwindCssUrl)
-                    .then(res => res.text())
-                    .then(tcss => {
-                        purify(html, tcss, purifyOpts, callback)
-                    })
-            } else {
-                purify(html, css, purifyOpts, clb)
-            }
+            let twcss = opts.cover;
+            const doc = editor.Canvas.getDocument();
+
+            if (!doc) return;
+
+            doc.head.querySelectorAll('style').forEach(el => {
+                el.innerText.includes('tailwind') && (twcss += el.innerText);
+            });
+            callback(twcss);
         }
     })
 }
