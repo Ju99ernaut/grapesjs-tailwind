@@ -25,8 +25,8 @@ export default (editor, opts = {}) => {
     ...options.i18n,
   });
 
-  const appendTailwindCss = async (ed) => {
-    const iframe = ed.Canvas.getFrameEl();
+  const appendTailwindCss = async (frame) => {
+    const iframe = frame.view.getEl();
 
     if (!iframe) return;
 
@@ -53,7 +53,7 @@ export default (editor, opts = {}) => {
     }, 100)
   }
 
-  editor.on('load', () => {
-    appendTailwindCss(editor);
+  editor.Canvas.getModel()['on']('change:frames', (m, frames) => {
+    frames.forEach(frame => frame.once('loaded', () => appendTailwindCss(frame)));
   });
 };
