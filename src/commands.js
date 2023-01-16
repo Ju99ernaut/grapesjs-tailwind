@@ -26,9 +26,9 @@ const themeList = [
 ]
 
 const colorRegex = new RegExp(
-    /(bg|text|border|ring)-(red|yellow|green|blue|indigo|purple|green)-(\d\d\d)/,
-    'g',
-)
+    /(bg|text|border|ring)-(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emarald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(\d\d\d)/,
+    "g"
+);
 
 const getUpdateThemeModal = (editor) => {
     const md = editor.Modal
@@ -81,13 +81,9 @@ const updateThemeColor = (editor, color) => {
     const wrapper = editor.DomComponents.getWrapper()
     const componentsAll = getAllComponents(wrapper, [])
     componentsAll.forEach((c) => {
-        const { el } = c.view
-        if (typeof el.className?.baseVal === 'string' && el.className?.baseVal.match(colorRegex)) {
-            el.className.baseVal = el.className.baseVal.replace(colorRegex, `$1-${color}-$3`)
-            c.replaceWith(el.outerHTML)
-        } else if (typeof el.className === 'string' && el.className.match(colorRegex)) {
-            el.className = el.className.replace(colorRegex, `$1-${color}-$3`)
-            c.replaceWith(el.outerHTML)
+        const cl = c.getAttributes().class;
+        if (typeof cl === "string" && cl.match(colorRegex)) {
+            c.setClass(cl.replace(colorRegex, `$1-${color}-$3`));
         }
     })
 }

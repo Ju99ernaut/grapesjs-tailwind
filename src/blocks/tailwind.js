@@ -654,7 +654,7 @@ export default (editor, options = {}) => {
   sources.forEach((s) => {
     bm.add(s.id, {
       label: s.label,
-      attributes: { class: s.class },
+      attributes: { class: `${s.class} block-full-width` },
       content: s.content,
       category: { label: s.category, open: s.category === 'Blog' },
     })
