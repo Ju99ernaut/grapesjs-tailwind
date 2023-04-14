@@ -139,6 +139,13 @@ import { source as m2s } from './data/icons/testimonial-2'
 import { source as m3 } from './data/testimonial-3'
 import { source as m3s } from './data/icons/testimonial-3'
 
+const getSvgHtml = (svg: any): string => {
+  if (typeof window === 'undefined') return ''
+  svg.setAttribute('width', '100%')
+  svg.setAttribute('height', '100%')
+  return svg.outerHTML
+}
+
 const sources = [
   {
     id: 'blog-block-1',
@@ -653,7 +660,7 @@ export default (editor, options = {}) => {
 
   sources.forEach((s) => {
     bm.add(s.id, {
-      label: s.label,
+      label: getSvgHtml(s.label),
       attributes: { class: `${s.class} block-full-width` },
       content: s.content,
       category: { label: s.category, open: s.category === 'Blog' },
