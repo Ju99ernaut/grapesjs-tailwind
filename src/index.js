@@ -1,6 +1,6 @@
+import en from './locale/en';
 import loadBlocks from './blocks';
 import loadCommands from './commands';
-import en from './locale/en';
 
 export default (editor, opts = {}) => {
   const options = {
@@ -12,11 +12,12 @@ export default (editor, opts = {}) => {
       config: {},
       cover: `img.object-cover { filter: sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) !important; }`,
       changeThemeText: 'Change Theme',
+      openBlock: 'blog'
     }, ...opts
   };
 
   // Add blocks
-  loadBlocks(editor, options);
+  loadBlocks(editor, options, config.openBlock);
   // Add commands
   loadCommands(editor, options);
   // Load i18n files
