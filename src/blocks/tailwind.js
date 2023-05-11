@@ -125,7 +125,7 @@ import { source as z4s } from './data/icons/footer-4'
 import { source as z5 } from './data/footer-5'
 import { source as z5s } from './data/icons/footer-5'
 
-const getSvgHtml = (svg: any): string => {
+const getSvgHtml = (svg) => {
   if (typeof window === 'undefined') return ''
   svg.setAttribute('width', '100%')
   svg.setAttribute('height', '100%')
@@ -641,15 +641,15 @@ const sources = [
   },
 ]
 
-export default (editor, options = {}, openBlock = 'Blog') => {
+export default (editor, options = {}) => {
   const bm = editor.Blocks
 
   sources.forEach((s) => {
     bm.add(s.id, {
-      label: getSvgHtml(s.label),
+      label: getSvgHtml(editor.$(s.label).get(0)),
       attributes: { class: `${s.class} block-full-width` },
       content: s.content,
-      category: { label: s.category, open: s.category === openBlock },
+      category: { label: s.category, open: s.category === options.openCategory },
     })
   })
 }

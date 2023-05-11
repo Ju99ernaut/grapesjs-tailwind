@@ -10,14 +10,14 @@ export default (editor, opts = {}) => {
       tailwindPlayCdn: 'https://cdn.tailwindcss.com',
       plugins: [],
       config: {},
-      cover: `img.object-cover { filter: sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) !important; }`,
+      cover: `.object-cover { filter: sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) !important; }`,
       changeThemeText: 'Change Theme',
-      openBlock: 'blog'
+      openCategory: 'Blog'
     }, ...opts
   };
 
   // Add blocks
-  loadBlocks(editor, options, config.openBlock);
+  loadBlocks(editor, options);
   // Add commands
   loadCommands(editor, options);
   // Load i18n files
