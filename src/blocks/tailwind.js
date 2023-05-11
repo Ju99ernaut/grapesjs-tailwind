@@ -1,3 +1,11 @@
+import { source as a1 } from './data/cta-1'
+import { source as a1s } from './data/icons/cta-1'
+import { source as a2 } from './data/cta-2'
+import { source as a2s } from './data/icons/cta-2'
+import { source as a3 } from './data/cta-3'
+import { source as a3s } from './data/icons/cta-3'
+import { source as a4 } from './data/cta-4'
+import { source as a4s } from './data/icons/cta-4'
 import { source as b1 } from './data/blog-1'
 import { source as b1s } from './data/icons/blog-2'
 import { source as b2 } from './data/blog-2'
@@ -8,14 +16,12 @@ import { source as b4 } from './data/blog-4'
 import { source as b4s } from './data/icons/blog-4'
 import { source as b5 } from './data/blog-5'
 import { source as b5s } from './data/icons/blog-5'
-
 import { source as c1 } from './data/contact-1'
 import { source as c1s } from './data/icons/contact-1'
 import { source as c2 } from './data/contact-2'
 import { source as c2s } from './data/icons/contact-2'
 import { source as c3 } from './data/contact-3'
 import { source as c3s } from './data/icons/contact-3'
-
 import { source as d1 } from './data/content-1'
 import { source as d1s } from './data/icons/content-1'
 import { source as d2 } from './data/content-2'
@@ -32,23 +38,12 @@ import { source as d7 } from './data/content-7'
 import { source as d7s } from './data/icons/content-7'
 import { source as d8 } from './data/content-8'
 import { source as d8s } from './data/icons/content-8'
-
-import { source as a1 } from './data/cta-1'
-import { source as a1s } from './data/icons/cta-1'
-import { source as a2 } from './data/cta-2'
-import { source as a2s } from './data/icons/cta-2'
-import { source as a3 } from './data/cta-3'
-import { source as a3s } from './data/icons/cta-3'
-import { source as a4 } from './data/cta-4'
-import { source as a4s } from './data/icons/cta-4'
-
 import { source as e1 } from './data/ecommerce-1'
 import { source as e1s } from './data/icons/ecommerce-1'
 import { source as e2 } from './data/ecommerce-2'
 import { source as e2s } from './data/icons/ecommerce-2'
 import { source as e3 } from './data/ecommerce-3'
 import { source as e3s } from './data/icons/ecommerce-3'
-
 import { source as f1 } from './data/feature-1'
 import { source as f1s } from './data/icons/feature-1'
 import { source as f2 } from './data/feature-2'
@@ -65,25 +60,12 @@ import { source as f7 } from './data/feature-7'
 import { source as f7s } from './data/icons/feature-7'
 import { source as f8 } from './data/feature-8'
 import { source as f8s } from './data/icons/feature-8'
-
-import { source as z1 } from './data/footer-1'
-import { source as z1s } from './data/icons/footer-1'
-import { source as z2 } from './data/footer-2'
-import { source as z2s } from './data/icons/footer-2'
-import { source as z3 } from './data/footer-3'
-import { source as z3s } from './data/icons/footer-3'
-import { source as z4 } from './data/footer-4'
-import { source as z4s } from './data/icons/footer-4'
-import { source as z5 } from './data/footer-5'
-import { source as z5s } from './data/icons/footer-5'
-
 import { source as g1 } from './data/gallery-1'
 import { source as g1s } from './data/icons/gallery-1'
 import { source as g2 } from './data/gallery-2'
 import { source as g2s } from './data/icons/gallery-2'
 import { source as g3 } from './data/gallery-3'
 import { source as g3s } from './data/icons/gallery-3'
-
 import { source as h1 } from './data/header-1'
 import { source as h1s } from './data/icons/header-1'
 import { source as h2 } from './data/header-2'
@@ -92,7 +74,22 @@ import { source as h3 } from './data/header-3'
 import { source as h3s } from './data/icons/header-3'
 import { source as h4 } from './data/header-4'
 import { source as h4s } from './data/icons/header-4'
-
+import { source as m1 } from './data/testimonial-1'
+import { source as m1s } from './data/icons/testimonial-1'
+import { source as m2 } from './data/testimonial-2'
+import { source as m2s } from './data/icons/testimonial-2'
+import { source as m3 } from './data/testimonial-3'
+import { source as m3s } from './data/icons/testimonial-3'
+import { source as p1 } from './data/pricing-1'
+import { source as p1s } from './data/icons/pricing-1'
+import { source as p2 } from './data/pricing-2'
+import { source as p2s } from './data/icons/pricing-2'
+import { source as q1 } from './data/step-1'
+import { source as q1s } from './data/icons/step-1'
+// import { source as q2 } from './data/step-2'
+// import q2s from './data/step-2.svg'
+import { source as q3 } from './data/step-3'
+import { source as q3s } from './data/icons/step-3'
 import { source as r1 } from './data/hero-1'
 import { source as r1s } from './data/icons/hero-1'
 import { source as r2 } from './data/hero-2'
@@ -105,39 +102,28 @@ import { source as r5 } from './data/hero-5'
 import { source as r5s } from './data/icons/hero-5'
 import { source as r6 } from './data/hero-6'
 import { source as r6s } from './data/icons/hero-6'
-
-import { source as p1 } from './data/pricing-1'
-import { source as p1s } from './data/icons/pricing-1'
-import { source as p2 } from './data/pricing-2'
-import { source as p2s } from './data/icons/pricing-2'
-
 import { source as s1 } from './data/statistic-1'
 import { source as s1s } from './data/icons/statistic-1'
 import { source as s2 } from './data/statistic-2'
 import { source as s2s } from './data/icons/statistic-2'
 import { source as s3 } from './data/statistic-3'
 import { source as s3s } from './data/icons/statistic-3'
-
-import { source as q1 } from './data/step-1'
-import { source as q1s } from './data/icons/step-1'
-// import { source as q2 } from './data/step-2'
-// import q2s from './data/step-2.svg'
-import { source as q3 } from './data/step-3'
-import { source as q3s } from './data/icons/step-3'
-
 import { source as t1 } from './data/team-1'
 import { source as t1s } from './data/icons/team-1'
 import { source as t2 } from './data/team-2'
 import { source as t2s } from './data/icons/team-2'
 import { source as t3 } from './data/team-3'
 import { source as t3s } from './data/icons/team-3'
-
-import { source as m1 } from './data/testimonial-1'
-import { source as m1s } from './data/icons/testimonial-1'
-import { source as m2 } from './data/testimonial-2'
-import { source as m2s } from './data/icons/testimonial-2'
-import { source as m3 } from './data/testimonial-3'
-import { source as m3s } from './data/icons/testimonial-3'
+import { source as z1 } from './data/footer-1'
+import { source as z1s } from './data/icons/footer-1'
+import { source as z2 } from './data/footer-2'
+import { source as z2s } from './data/icons/footer-2'
+import { source as z3 } from './data/footer-3'
+import { source as z3s } from './data/icons/footer-3'
+import { source as z4 } from './data/footer-4'
+import { source as z4s } from './data/icons/footer-4'
+import { source as z5 } from './data/footer-5'
+import { source as z5s } from './data/icons/footer-5'
 
 const getSvgHtml = (svg: any): string => {
   if (typeof window === 'undefined') return ''
@@ -655,7 +641,7 @@ const sources = [
   },
 ]
 
-export default (editor, options = {}) => {
+export default (editor, options = {}, openBlock = 'Blog') => {
   const bm = editor.Blocks
 
   sources.forEach((s) => {
@@ -663,7 +649,7 @@ export default (editor, options = {}) => {
       label: getSvgHtml(s.label),
       attributes: { class: `${s.class} block-full-width` },
       content: s.content,
-      category: { label: s.category, open: s.category === 'Blog' },
+      category: { label: s.category, open: s.category === openBlock },
     })
   })
 }
