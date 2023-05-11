@@ -12,7 +12,7 @@ export default (editor, opts = {}) => {
       config: {},
       cover: `.object-cover { filter: sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) !important; }`,
       changeThemeText: 'Change Theme',
-      openCategory: 'Blog'
+      openCategory: 'Blog',
     }, ...opts
   };
 
