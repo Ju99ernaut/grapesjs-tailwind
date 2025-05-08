@@ -13,11 +13,13 @@ export default (editor, opts = {}) => {
       cover: `.object-cover { filter: sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) !important; }`,
       changeThemeText: 'Change Theme',
       openCategory: 'Blog',
+      blocks: true
     }, ...opts
   };
 
   // Add blocks
-  loadBlocks(editor, options);
+  if(options.blocks)
+   loadBlocks(editor, options);
   // Add commands
   loadCommands(editor, options);
   // Load i18n files
