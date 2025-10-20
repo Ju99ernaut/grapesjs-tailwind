@@ -657,7 +657,7 @@ export const loadTailwindBlocks: Plugin<PluginOptions> = (
       attributes: { class: `${source.class} block-full-width` },
       content: source.content,
       category: {
-        id: source.id,
+        id: source.category,
         label: source.category,
         open: source.category === options.openCategory,
       },

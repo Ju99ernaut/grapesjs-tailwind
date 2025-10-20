@@ -1,4 +1,4 @@
-import type { Rule, Media } from "css";
+import type { Rule, Media } from "./css/types";
 import { rework, Rework } from "./rework";
 import { SelectorFilter } from "./SelectorFilter";
 

@@ -1,4 +1,4 @@
-import type { Rule } from "css";
+import type { Rule } from "./css/types";
 import { getAllWordsInSelector } from "./extractWordsUtils";
 
 export interface CssSyntaxTreeLike {

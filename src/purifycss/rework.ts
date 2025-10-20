@@ -1,10 +1,10 @@
 import {
-  stringify,
-  parse,
   type ParserOptions,
   type Stylesheet,
   type StringifyOptions,
-} from "css";
+} from "./css/types";
+import { parse } from "./css/parse";
+import { stringify } from "./css/stringify";
 
 export function rework(str: string, options?: ParserOptions) {
   return new Rework(parse(str, options));

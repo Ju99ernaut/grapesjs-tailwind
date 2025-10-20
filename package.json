@@ -17,12 +17,8 @@
         "plugin"
     ],
     "devDependencies": {
-        "@types/css": "^0.0.38",
         "grapesjs": "^0.22.13",
         "grapesjs-cli": "^4.1.3"
     },
-    "license": "MIT",
-    "dependencies": {
-        "css": "^3.0.0"
-    }
+    "license": "MIT"
 }

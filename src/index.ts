@@ -27,6 +27,7 @@ export const plugin: Plugin<PluginOptions> = (editor, opts = {}) => {
   commands(editor, options);
 
   const appendTailwindCss = async (frame: Component) => {
+    // @ts-ignore
     const iframe = frame.view?.getEl();
 
     if (!iframe) return;
@@ -61,3 +62,5 @@ export const plugin: Plugin<PluginOptions> = (editor, opts = {}) => {
     );
   });
 };
+
+export default plugin;

@@ -49,31 +49,33 @@
 
 
     <script type="text/javascript">
-        const escapeName = (name) => `${name}`.trim().replace(/([^a-z0-9\w-:/]+)/gi, '-');
+        window.onload = () => {
+            const escapeName = (name) => `${name}`.trim().replace(/([^a-z0-9\w-:/]+)/gi, '-');
 
-        window.editor = grapesjs.init({
-            height: '100%',
-            container: '#gjs',
-            showOffsets: true,
-            fromElement: true,
-            noticeOnUnload: false,
-            storageManager: false,
-            selectorManager: { escapeName },
-            plugins: ['grapesjs-tailwind'],
-            pluginsOpts: {
-                'grapesjs-tailwind': { /* Test here your options  */ }
-            }
-        });
+            window.editor = grapesjs.init({
+                height: '100%',
+                container: '#gjs',
+                showOffsets: true,
+                fromElement: true,
+                noticeOnUnload: false,
+                storageManager: false,
+                selectorManager: { escapeName },
+                plugins: ['grapesjs-tailwind'],
+                pluginsOpts: {
+                    'grapesjs-tailwind': { /* Test here your options  */ }
+                }
+            });
 
-        editor.Panels.addButton('options', {
-            id: 'update-theme',
-            className: 'fa fa-adjust',
-            command: 'open-update-theme',
-            attributes: {
-                title: 'Update Theme',
-                'data-tooltip-pos': 'bottom',
-            },
-        });
+            editor.Panels.addButton('options', {
+                id: 'update-theme',
+                className: 'fa fa-adjust',
+                command: 'open-update-theme',
+                attributes: {
+                    title: 'Update Theme',
+                    'data-tooltip-pos': 'bottom',
+                },
+            });
+        }
     </script>
 </body>
 
