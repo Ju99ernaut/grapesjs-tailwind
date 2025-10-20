@@ -96,8 +96,8 @@ editor.runCommand('get-tailwindCss', { /* Options here */ });
 | Option | Description | Default |
 |-|-|-
 | `tailwindPlayCdn` | URL for fetching tailwind play cdn | `https://cdn.tailwindcss.com` |
-| `plugins` | array to include tailwind 1st party plugins | `[]` |
-| `config` | custom tailwind config | `{}` |
+| `tailwindPlugins` | array to include tailwind 1st party plugins | `[]` |
+| `tailwindConfig` | custom tailwind config | `{}` |
 | `changeThemeText` | Change theme modal title | `Change Theme` |
 
 

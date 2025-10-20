@@ -48,6 +48,7 @@ const getUpdateThemeModal = (editor: Editor) => {
   let selectedTheme: { name: string; color: string };
   themeList.forEach((theme) => {
     const btnColor = document.createElement("button");
+    btnColor.type = "button";
     btnColor.className = "change-theme-button";
     btnColor.style.backgroundColor = theme.color;
     btnColor.onclick = () => (selectedTheme = theme);
@@ -58,6 +59,7 @@ const getUpdateThemeModal = (editor: Editor) => {
   const containerFooter = document.createElement("div");
 
   const btnEdit = document.createElement("button");
+  btnEdit.type = "button";
   btnEdit.innerHTML = "Update";
   btnEdit.className = pfx + "btn-prim " + pfx + "btn-import";
   btnEdit.style.float = "right";
