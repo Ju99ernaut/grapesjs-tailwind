@@ -99,6 +99,7 @@ editor.runCommand('get-tailwindCss', { /* Options here */ });
 | `tailwindPlugins` | array to include tailwind 1st party plugins | `[]` |
 | `tailwindConfig` | custom tailwind config | `{}` |
 | `changeThemeText` | Change theme modal title | `Change Theme` |
+| `loadBlocks` | Load default blocks | `true` |
 
 
 
