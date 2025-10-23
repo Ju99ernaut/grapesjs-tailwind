@@ -68,7 +68,6 @@ const getUpdateThemeModal = (editor: Editor) => {
     md.close();
   };
 
-  // box-shadow: 0 0 0 2pt #c5c5c575
   containerFooter.appendChild(btnEdit);
 
   container.appendChild(containerBody);
